@@ -11,6 +11,7 @@ import java.awt.Image;
  * @author Admin
  */
 public class Student {
+    private int id;
     private String name;
     private int age;
     private String college;
@@ -22,6 +23,7 @@ public class Student {
     
     
 // constructor to initialize the variables in private
+    public Student(){};
     public Student(String name,int age, String college, String phone, String continent, String experience, Image photo){
 // after initializing call object of the class
     this.name = name;
@@ -33,6 +35,16 @@ public class Student {
     this.photo = photo;
   
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
 
     public String getName() {
         return name;
@@ -74,11 +86,11 @@ public class Student {
         this.continent = continent;
     
     } 
-        public String getexperience(){
+        public String getExperience(){
             return experience;
     }
         
-     public void setexperience(String experience) {
+     public void setExperience(String experience) {
          this.experience = experience;
      }
 
@@ -101,6 +113,10 @@ public class Student {
                 "\n Phone: " + phone + 
                 "\n Continent: " + continent +
                 "\n experience: " + experience;
+    }
+
+    public void add(Student user) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 

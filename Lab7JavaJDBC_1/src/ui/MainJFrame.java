@@ -15,9 +15,10 @@ import javax.swing.JPanel;
  */
 public class MainJFrame extends javax.swing.JFrame {
     
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainJFrame.class.getName());
-        private JPanel bottomPanel;
-
+    
+    
     /**
      * Creates new form MainJFrame
      */
@@ -28,7 +29,7 @@ public class MainJFrame extends javax.swing.JFrame {
     System.out.println("MainJFrame bottomPanel: " + this.bottomPanel);
 
 // Create formPanel Object
-    FormJPanel formJPanelObject = new FormJPanel(this.bottomPanel);
+    FormJPanel formJPanelObject = new FormJPanel();
     
 //    Add object to bottompanel deck of components before display
     this.bottomPanel.add(formJPanelObject);
@@ -38,6 +39,8 @@ public class MainJFrame extends javax.swing.JFrame {
     
 //    Display the next item in the deck of components
     layout.next(this.bottomPanel);
+   
+    }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -170,11 +173,21 @@ FormJPanel formJPanelObject = new FormJPanel(this.bottomPanel);
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+ try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+       
+        }
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new MainJFrame().setVisible(true));
+   
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ViewButton;
     private javax.swing.JPanel bottomPanel;
@@ -182,5 +195,4 @@ FormJPanel formJPanelObject = new FormJPanel(this.bottomPanel);
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel topPanel;
     // End of variables declaration//GEN-END:variables
-
 }
